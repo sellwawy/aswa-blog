@@ -22,7 +22,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params: { postSlug } }: Props) {
+export async function generateMetadata({ params }: Props) {
+  const { postSlug } = await params;
   const post = await getPostByName(`${postSlug}.mdx`); //deduped!
 
   if (!post) {
