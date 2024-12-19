@@ -1,17 +1,15 @@
 'use client'
 
-import SectionHeading from './ui/SectionHeading'
-import { Button } from './ui/Button'
+import { Button } from '../ui/Button'
+import SectionHeading from '../ui/SectionHeading'
 import { cn } from '@/utils'
 
-function Contact({className}) {
+function Contact({}) {
    return (
       <section id="contact" className="py-spacing-12">
          <div className="wrapper">
             <div className="flex flex-col items-center justify-center">
-               <SectionHeading className={cn(
-                className,
-         )}>Contact Me</SectionHeading>
+               <SectionHeading className={cn()}>Contact Me</SectionHeading>
                <p className="text-xl">
                   please contact me directly at{' '}
                   <a className="underline" href="mailto:example@gmail.com">

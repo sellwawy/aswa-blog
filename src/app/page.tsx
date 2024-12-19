@@ -1,4 +1,5 @@
 // export const revalidate = 86400
+import Contact from '@/components/home/Contact'
 import HomeHero from '@/components/home/Hero'
 import Projects from '@/components/home/Projects'
 
@@ -7,6 +8,7 @@ function HomePage() {
       <main>
          <HomeHero />
          <Projects />
+         <Contact />
       </main>
    )
 }
