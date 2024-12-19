@@ -1,21 +1,21 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import personal_1 from '@/../public/images/personal-1.jpg'
 import { buttonVariants } from '../ui/Button'
-import personal from '@/../public/images/personal.jpg'
 
-function Hero() {
+function HomeHero() {
    return (
       // 3.75rem (Header height)
       <section className="wrapper bg-quinary flex min-h-[calc(100dvh-3.75rem)] flex-col items-center justify-center py-spacing-11">
          {/* Image */}
          <div className="flex flex-col items-center justify-center text-center">
             <Image
-               src={personal}
+               src={personal_1}
                alt="John doe"
                placeholder="blur"
-               priority={true}
+               priority
                quality={100}
-               className="border-quinary max-w-[12rem] rounded-full border-white border-4 object-cover shadow-lg"
+               className="border-quinary max-w-[12rem] rounded-full border-4 object-cover shadow-lg"
             />
          </div>
          <div>
@@ -37,11 +37,11 @@ function Hero() {
             </div>
             {/* Call to action */}
             <div className="flex flex-wrap justify-center gap-x-spacing-5 gap-y-spacing-4">
-               <Link href="/#contact" className={buttonVariants()}>
-                  Let&apos;s Talk
+               <Link href="/#projects" className={buttonVariants()}>
+                  Projects
                </Link>
-               <Link href="/#about" className={buttonVariants({ variant: 'secondary' })}>
-                  About Me
+               <Link href="javascript:;" className={buttonVariants({ variant: 'secondary' })}>
+                  Download CV
                </Link>
             </div>
          </div>
@@ -49,4 +49,4 @@ function Hero() {
    )
 }
 
-export default Hero
+export default HomeHero

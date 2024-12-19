@@ -1,11 +1,11 @@
 import Image from 'next/image'
-import SectionHeading from './ui/SectionHeading'
+import SectionHeading from '../ui/SectionHeading'
 import Link from 'next/link'
-import { buttonVariants } from './ui/Button'
-import SocialMedia from './shared/SocialMedia'
-import personal_2 from '../../public/images/personal-2.jpg'
+import { buttonVariants } from '../ui/Button'
+import SocialMedia from '../shared/SocialMedia'
+import personal_2 from '@/../public/images/personal-2.jpg'
 
-function About() {
+function AboutSection() {
    return (
       <section id="about" className="py-spacing-12">
          <div className="wrapper">
@@ -23,14 +23,11 @@ function About() {
                <div className="flex flex-col justify-between gap-spacing-10 px-spacing-10 pb-spacing-9 md:flex-1 md:pt-spacing-9">
                   {/* About */}
                   <p>
-                     <span className="text-xl font-semibold">
-                        Hi, I&apos;m John.
-                     </span>{' '}
-                     Lorem ipsum dgolor sit amet consectetur adipisicing elit.
-                     Aliquam veritatis, assumenda necessitatibus voluptatibus
-                     totam blanditiis aut molestiae. Lorem, ipsum dolor sit amet
-                     consectetur adipisicing elit. Sed minus harum.Lorem ipsum
-                     dolor sit amet consectetur adipisicing elit.
+                     <span className="text-xl font-semibold">Hi, I&apos;m John.</span> Lorem ipsum dgolor sit
+                     amet consectetur adipisicing elit. Aliquam veritatis, assumenda necessitatibus
+                     voluptatibus totam blanditiis aut molestiae. Lorem, ipsum dolor sit amet consectetur
+                     adipisicing elit. Sed minus harum.Lorem ipsum dolor sit amet consectetur adipisicing
+                     elit.
                   </p>
                   <ul className="flex flex-wrap gap-x-spacing-11">
                      <li>
@@ -82,4 +79,4 @@ function About() {
       </section>
    )
 }
-export default About
+export default AboutSection

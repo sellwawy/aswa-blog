@@ -1,17 +1,14 @@
-import Hero from '@/components/Home/Hero'
-import Posts from '@/components/Posts'
-import { getPostByName, getPostsMeta } from '@/lib/posts'
-
 // export const revalidate = 86400
+import HomeHero from '@/components/home/Hero'
+import Projects from '@/components/home/Projects'
 
-export default async function Home() {
-   const post = await getPostByName('image-component-nextjs.mdx')
-   console.log(post)
-
+function HomePage() {
    return (
       <main>
-         <Hero />
-         <Posts posts={await getPostsMeta()} />
+         <HomeHero />
+         <Projects />
       </main>
    )
 }
+
+export default HomePage

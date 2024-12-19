@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
-import Header from '@/components/Header'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 
 const inter = localFont({
-   src: './fonts/InterVF.woff2',
+   src: '../fonts/InterVF.woff2',
    variable: '--font-inter',
    weight: '100 900',
 })
@@ -21,9 +22,10 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="en">
-         <body className={`${inter.className} font antialiased`}>
+         <body className={`${inter.className} min-h-screen scroll-smooth antialiased`}>
             <Header />
             {children}
+            <Footer />
          </body>
       </html>
    )

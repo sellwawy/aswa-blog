@@ -1,17 +1,26 @@
 'use client'
 
+import { buttonVariants } from '@/components/ui/Button'
 import { navLinksData } from '@/constants/navLinksData'
 import Link from 'next/link'
 import { useState } from 'react'
 import { FaBars, FaXmark } from 'react-icons/fa6'
 
-const navItems = navLinksData.map((item, index) => (
-   <li key={index}>
-      <Link href={item.route} className="hover:border-primary py-1 hover:border-b-2">
-         {item.label}
-      </Link>
-   </li>
-))
+const navItems = navLinksData.map((item, index) =>
+   index !== 2 ? (
+      <li key={index}>
+         <Link href={`/${item.route}`} className="hover:border-primary py-1 hover:border-b-2">
+            {item.label}
+         </Link>
+      </li>
+   ) : (
+      <li key={index}>
+         <Link href="javascript:;" className={buttonVariants({})}>
+            {item.label}
+         </Link>
+      </li>
+   ),
+)
 
 function Navbar() {
    const [isTure, setIsTure] = useState(false)
@@ -36,7 +45,7 @@ function Navbar() {
             <span className="sr-only">Menu</span>
          </button>
          {/* Navbar */}
-         <nav className="text-primary pt-1 font-semibold" aria-label="Main">
+         <nav className="text-primary font-semibold" aria-label="Main">
             <ul
                id="main-navigation"
                data-visible={isTure}

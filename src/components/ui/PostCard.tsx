@@ -6,7 +6,7 @@ function PostCard({ slug, title, date, description }: Meta) {
       <article className="mb-[1rem]">
          <header>
             <h3 className="text-[2rem]">
-               <Link href={`/${slug}`}>{title}</Link>
+               <Link href={`/blog/${slug}`}>{title}</Link>
             </h3>
          </header>
          <time dateTime={date}>{getFormattedDate(date)}</time>

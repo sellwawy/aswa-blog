@@ -43,14 +43,14 @@ export default function Header() {
       // Header
       <header
          className={cn(
-            'bg-quinary sticky flex top-0 z-50 h-[3.75rem] items-center justify-center overflow-hidden transition-transform',
+            'bg-quinary sticky flex top-0 z-50  items-center justify-center overflow-hidden transition-transform',
             {
                '-translate-y-full': hide,
                'shadow-none': isZeroScroll,
                'shadow-[0_0_4px_hsl(0_0_0/0.3)]': !isZeroScroll,
             },
          )}>
-         <div className="wrapper flex items-center justify-between">
+         <div className="wrapper flex py-2 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="me-9" aria-label="Homepage">
                {/* <Image className="w-[9rem] md:w-[10.5rem]"

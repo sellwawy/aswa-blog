@@ -40,8 +40,6 @@ async function Post({ params }: Props) {
    const { postSlug } = await params
    const post = await getPostByName(`${postSlug}.mdx`) //deduped!
 
-   console.log(post)
-
    if (!post) notFound()
 
    const { meta, content } = post
