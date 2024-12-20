@@ -8,5 +8,5 @@ type Meta = {
 
 type BlogPost = {
    meta: Meta
-   // content: ReactElement<any, string | JSXElementConstructor<any>>
+   content: ReactElement<any, string | JSXElementConstructor<any>>
 }

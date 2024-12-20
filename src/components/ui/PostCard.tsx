@@ -3,9 +3,9 @@ import getFormattedDate from '@/lib/getFormattedDate'
 
 function PostCard({ slug, title, date, description }: Meta) {
    return (
-      <article className="mb-[1rem]">
+      <article className="mb-spacing-8">
          <header>
-            <h3 className="text-[2rem]">
+            <h3 className="text-3xl font-semibold">
                <Link href={`/blog/${slug}`}>{title}</Link>
             </h3>
          </header>

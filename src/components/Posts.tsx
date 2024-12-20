@@ -1,7 +1,10 @@
 import { Key } from "react";
 import PostCard from "./ui/PostCard";
 
-export default async function Posts({ posts }) {
+type PostsProps = {
+  posts: Meta[]
+}
+export default async function Posts({ posts }: PostsProps) {
   if (!posts) {
     return <p className="mt-10 text-center">Sorry, no posts available.</p>;
   }

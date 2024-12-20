@@ -2,6 +2,7 @@ import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/utils'
 import { ClassValue } from 'clsx'
+import { Key } from 'react'
 
 type CardProps = {
    projectName: string
@@ -26,7 +27,7 @@ function Card({ projectName, description, imageSrc, previewIcons, className }: C
             <p className="text-gray-700 pb-spacing-3">{description}</p>
             {/* Icons */}
             <div className="flex gap-spacing-3 mt-auto">
-               {previewIcons.map((item: React.ReactNode, index: number) => (
+               {previewIcons.map((item: React.ReactNode, index: Key) => (
                   <Link href="/" key={index} className="text-3xl">
                      {item}
                   </Link>

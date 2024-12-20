@@ -1,6 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority'
 import { cn } from '@/utils'
-import { ButtonHTMLAttributes } from 'react'
 
 const buttonVariants = cva('flex w-fit items-center justify-center font-medium duration-300', {
    variants: {

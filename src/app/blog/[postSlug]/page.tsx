@@ -6,11 +6,14 @@ import Link from "next/link";
 // 86400
 // export const revalidate = 0
 
-type Props = {
-  params: {
-    postSlug: string;
-  };
-};
+// type Props = {
+//   params: {
+//     postSlug: string;
+//   };
+// };
+
+// type Props = Promise<{ slug: string }>
+type Params = Promise<{ postSlug: string }>
 
 export async function generateStaticParams() {
   const posts = await getPostsMeta();
@@ -22,23 +25,25 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props) {
-  const { postSlug } = await params;
-  const post = await getPostByName(`${postSlug}.mdx`); //deduped!
+// export async function generateMetadata({ params }: Props) {
+//   const { postSlug } = await params;
+//   const post = await getPostByName(`${postSlug}.mdx`); //deduped!
 
-  if (!post) {
-    return {
-      title: "Post Not Found",
-    };
-  }
+//   if (!post) {
+//     return {
+//       title: "Post Not Found",
+//     };
+//   }
 
-  return {
-    title: post.meta.title,
-  };
-}
+//   return {
+//     title: post.meta.title,
+//   };
+// }
 
-async function Post({ params }: Props) {
-  const { postSlug } = await params;
+async function Post(props: { params: Params }) {
+  // const { postSlug } = await props.params;
+  const params = await props.params;
+  const postSlug = params.postSlug;
   const post = await getPostByName(`${postSlug}.mdx`); //deduped!
 
   if (!post) notFound();
