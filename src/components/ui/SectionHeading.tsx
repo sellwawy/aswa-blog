@@ -1,6 +1,12 @@
 import { cn } from '@/utils'
+import React from 'react'
 
-function SectionHeading({ children, className }) {
+type Props = {
+   children: React.ReactNode
+   className: string | undefined
+}
+
+function SectionHeading({ children, className }: Props) {
    return (
       <h2
          className={cn(

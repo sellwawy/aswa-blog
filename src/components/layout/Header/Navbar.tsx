@@ -15,7 +15,7 @@ const navItems = navLinksData.map((item, index) =>
       </li>
    ) : (
       <li key={index}>
-         <Link href="javascript:;" className={buttonVariants({})}>
+         <Link href="/#contact" className={buttonVariants({})}>
             {item.label}
          </Link>
       </li>

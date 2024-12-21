@@ -1,5 +1,6 @@
 import Posts from '@/components/Posts'
 import PaginationControls from '@/components/ui/PaginationControls'
+import SectionHeading from '@/components/ui/SectionHeading'
 import { getPostsMeta } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 
@@ -29,17 +30,19 @@ async function Page(props: { params: Params }) {
    if (!getPosts) notFound()
 
    return (
-      <div className="flex flex-col gap-2 min-h-screen items-center">
-         <Posts posts={getPosts?.slice(start, end)} />
-
-         <PaginationControls
-            hasNextPage={Number(getPosts?.length) > end}
-            hasPrevPage={start > 0}
-            page={Number(pageSlug)}
-            TotalPosts={getPosts?.length}
-            perPage={perPage}
-         />
-      </div>
+      <main>
+         <SectionHeading clssName="d">recently published</SectionHeading>
+         <div className="flex flex-col gap-2 items-center">
+            <Posts posts={getPosts?.slice(start, end)} />
+            <PaginationControls
+               hasNextPage={Number(getPosts?.length) > end}
+               hasPrevPage={start > 0}
+               page={Number(pageSlug)}
+               TotalPosts={getPosts?.length}
+               perPage={perPage}
+            />
+         </div>
+      </main>
    )
 }
 
